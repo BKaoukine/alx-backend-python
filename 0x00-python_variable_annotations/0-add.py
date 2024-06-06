@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Testing typ annonatatio."""
 
+
 def add(a: float, b: float) -> float:
     """Add a func that adds two floats.
 
