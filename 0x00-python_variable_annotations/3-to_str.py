@@ -2,9 +2,6 @@
 """Testing typ annonatatio."""
 
 
-
-
-
 def to_str(n: float) -> str:
     """To_str takes float and returns string of it.
 
