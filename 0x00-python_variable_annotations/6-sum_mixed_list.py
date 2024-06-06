@@ -2,10 +2,10 @@
 """Testing typ annonatatio."""
 
 
-from typing import List
+from typing import List, Union
 
 
-def sum_mixed_list(mxd_lst: List[float | int]) -> float:
+def sum_mixed_list(mxd_lst: List[Union[float, int]]) -> float:
     """Sum_mixed_list is a func that Sums list of flaots.
 
     Args:
