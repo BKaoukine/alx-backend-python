@@ -2,6 +2,9 @@
 """Testing typ annonatatio."""
 
 
+import math
+
+
 def floor(n: float) -> int:
     """Floor takes float and returns it floor.
 
@@ -11,4 +14,4 @@ def floor(n: float) -> int:
     Returns:
         int: the rounded number
     """
-    return int(floor(n))
+    return int(math.floor(n))
