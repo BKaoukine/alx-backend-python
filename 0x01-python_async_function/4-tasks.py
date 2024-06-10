@@ -1,15 +1,10 @@
 #!/usr/bin/env python3
 """The basics of async."""
-
-import asyncio
-import random
-
-wait_random = __import__('0-basic_async_syntax').wait_random
-task_wait_random = __import__('1-concurrent_routines').wait_n
+from typing import List
+task_wait_random = __import__('3-tasks').task_wait_random
 
 
-
-async def wait_task_wait_n(n, max_delay):
+async def task_wait_n(n: int, max_delay: int) -> List[float]:
     """Wait_n func will spawn wait_random n times with the specified max_delay.
 
     Args:
@@ -22,9 +17,8 @@ async def wait_task_wait_n(n, max_delay):
     delays = []
 
     while (n > 0):
-        numDelay = await wait_random(max_delay)
+        numDelay = await task_wait_random(max_delay)
         delays.append(numDelay)
         n -= 1
 
-    
     return delays
