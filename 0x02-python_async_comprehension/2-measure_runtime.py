@@ -22,13 +22,6 @@ async def measure_runtime() -> AsyncGenerator[float, None]:
     Yields:
         Iterator[AsyncGenerator[float,None]]: random floats between 0-10
     """
-    start_time = time.time
-    
-    group = asyncio.gather(async_comprehension)
-    
-    await group
-    
-    end_time = time.time
-    
-
-    return end_time-start_time
+    runtime = time.time()
+    await asyncio.gather(*(async_comprehension() for _ in range(4)))
+    return time.time() - runtime
