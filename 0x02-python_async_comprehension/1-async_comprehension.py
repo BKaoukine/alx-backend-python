@@ -4,8 +4,6 @@
 Yields:
     Iterator: Random float from 0 to 10
 """
-import asyncio
-import random
 from typing import List
 async_generator = __import__('0-async_generator').async_generator
 
@@ -22,6 +20,4 @@ async def async_comprehension() -> List[float]:
     Yields:
         Iterator[AsyncGenerator[float,None]]: random floats between 0-10
     """
-    lista = async_generator()
-
-    return [item async for item in lista]
+    return [item async for item in async_generator()]
