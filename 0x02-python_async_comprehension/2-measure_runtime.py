@@ -6,11 +6,10 @@ Yields:
 """
 import asyncio
 import time
-from typing import List, AsyncGenerator
 async_comprehension = __import__('1-async_comprehension').async_comprehension
 
 
-async def measure_runtime() -> AsyncGenerator[float, None]:
+async def measure_runtime() -> float:
     """measure_runtime Coroutine function will loop 10 times.
 
     each time asynchronously. wait 1 second.
