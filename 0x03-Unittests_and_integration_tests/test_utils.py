@@ -25,6 +25,11 @@ Example:
 import unittest
 import utils
 from parameterized import parameterized
+from typing import (
+    Mapping,
+    Sequence,
+    Any,
+)
 
 
 class TestAccessNestedMap(unittest.TestCase):
@@ -43,7 +48,9 @@ class TestAccessNestedMap(unittest.TestCase):
             [{"a": {"b": 2}}, ("a", "b"), 2]
         ]
     )
-    def test_access_nested_map(self, nested_map, path, expected):
+    def test_access_nested_map(
+        self, nested_map: Mapping, path: Sequence, expected: int
+            ) -> Any:
         """
         Tests the access_nested_map function from the utils module.
 
