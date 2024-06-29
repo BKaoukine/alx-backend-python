@@ -65,6 +65,33 @@ class TestAccessNestedMap(unittest.TestCase):
         """
         self.assertEqual(access_nested_map(nested_map, path), expected)
 
+    @parameterized.expand(
+        [
+            ({}, ("a", ), KeyError),
+            ({"a": 1}, ("a", "b"), KeyError)
+        ]
+    )
+    def test_access_nested_map_exception(
+        self, nested_map: Mapping, path: Sequence, expected
+            ) -> Any:
+        """
+        Test access_nested_map function for cases.
+        that should raise an exception.
+
+        Args:
+            nested_map (Mapping): The nested dictionary to access.
+            path (Sequence): The tuple of keys representing.
+            the path to the value.
+            expected (type): The type of exception expected to be raised.
+
+        Asserts:
+            Asserts that the access_nested_map function
+            raises the expected exception
+            when called with the given nested_map and path.
+        """
+        with self.assertRaises(expected):
+            access_nested_map(nested_map, path)
+
 
 if __name__ == '__main__':
     unittest.main()
