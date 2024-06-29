@@ -51,16 +51,5 @@ class TestAccessNestedMap(unittest.TestCase):
     def test_access_nested_map(
         self, nested_map: Mapping, path: Sequence, expected: int
             ) -> Any:
-        """
-        Tests the access_nested_map function from the utils module.
-
-        Args:
-            nested_map (dict): The nested dictionary to access.
-            path (tuple): The tuple of keys representing the path to the value.
-            expected: The expected value at the end of the path.
-
-        Asserts:
-            The value obtained from the access_nested_map function is equal to
-            the expected value.
-        """
+        """test the expected output for access nested maps"""
         self.assertEqual(access_nested_map(nested_map, path), expected)
