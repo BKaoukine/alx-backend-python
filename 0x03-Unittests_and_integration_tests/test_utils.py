@@ -48,9 +48,7 @@ class TestAccessNestedMap(unittest.TestCase):
             ({"a": {"b": 2}}, ("a", "b"), 2)
         ]
     )
-    def test_access_nested_map(
-        self, nested_map: Mapping, path: Sequence, expected: int
-            ) -> Any:
+    def test_access_nested_map(self, nested_map, path, expected):
         """
         Tests the access_nested_map function from the utils module.
 
@@ -67,13 +65,11 @@ class TestAccessNestedMap(unittest.TestCase):
 
     @parameterized.expand(
         [
-            ({}, ("a", ), KeyError),
+            ({}, ("a",), KeyError),
             ({"a": 1}, ("a", "b"), KeyError)
         ]
     )
-    def test_access_nested_map_exception(
-        self, nested_map: Mapping, path: Sequence, expected
-            ) -> Any:
+    def test_access_nested_map_exception(self, nested_map, path, exception):
         """
         Test access_nested_map function for cases.
         that should raise an exception.
@@ -89,7 +85,7 @@ class TestAccessNestedMap(unittest.TestCase):
             raises the expected exception
             when called with the given nested_map and path.
         """
-        with self.assertRaises(expected):
+        with self.assertRaises(exception):
             access_nested_map(nested_map, path)
 
 
